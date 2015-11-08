@@ -1,0 +1,91 @@
+*{box-sizing: border-box;
+ }
+ body{
+ 	font-family: 'Josefin Sans', sans-serif;
+ 	font-size: 14px;
+ 	background-color:  #f6bd20;
+ }
+
+.circle1{
+	font-size: 1.3em;
+	color:  #f6bd20;
+	text-align:center;
+	background-color: #c52018;
+	height:300px ;
+	width:300px ;
+	padding: 70px;
+	border-radius: 50%;
+	position: absolute;
+	top: -65px;
+	left: 250px;
+}
+.circle2{
+	font-size: small;
+	color: white;
+	padding: 60px;
+	padding-top: 80px;
+	padding-left: 50px;
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+	background-color: #9c5200;
+	position: absolute;
+	top: 250px;
+	left: 150px;
+}
+.circle3{
+	color:#9c5200;
+	text-align: center;
+	height:450px ;
+	width: 450px;
+	padding: 90px;
+	border-radius: 50%;
+	background-color: white;
+	position: absolute;
+	top: 200px;
+	left: 370px;
+}
+.circle4{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	padding: 40px;
+	background-color: white;
+	position: absolute;
+	top: 90px;
+	left: 700px;
+}
+.circle5{
+	height: 100px;
+	width: 100px;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	border-radius: 50%;
+	background-color: #9c5200;
+	position: fixed;
+	top: 450px;
+	left: 1000px;
+}
+.circle6{
+	color: #f6bd20;
+	font-size: 0.8em;
+	text-align: center;
+	padding-top: 70px;
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	background-color: #c52018;
+	position: absolute;
+	top: 620px;
+	left: 320px;
+}
+/* .wrap{
+ 	background-color:  #f6bd20;
+ 	border-width: 10px;
+ 	border-color: black;
+ 	height:800px; 
+ 	width:1200px;
+ 	position: relative;
+ 	top: 0px;
+ }*/
