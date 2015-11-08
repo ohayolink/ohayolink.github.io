@@ -112,11 +112,13 @@ img{
 }
 #good{
 	width:30%; 
+	height: 450px;
 	background-color: #F9F59A;
 	float: left;
 }
 #bad{
 	width:30%; 
+	height: 450px;
 	background-color: #F9F59A;
 	float: left;
 	margin-left: 5%;
@@ -124,6 +126,7 @@ img{
 }
 #feature{
 	width:30%; 
+	height: 450px;
 	background-color: #F9F59A;
 	float: right;
 
