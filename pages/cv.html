@@ -1,43 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Link's CV</title>
+    <meta charset="utf-8">
+    <title>CV</title>
+    <style type="text/css">
+    body {
+        margin: 0px;
+        background-color: #BEBEBE;
+        font-size: 20px;
+        font-family: ;
+    }
+    
+    .frame {
+        margin: 10px auto;
+        width: 1000px;
+        background-color: #FFFFFF;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .header {
+        display: inline-block;
+        vertical-align: 25px;
+    }
+    
+    .photo {
+        display: inline-block;
+        /*width: */
+    }
+    
+    img {
+        height: 150px;
+    }
+    
+    .name {
+        font-size: 200%;
+        margin: 10px;
+    }
+    
+    .contact {
+        font-size: 75%;
+        margin: 10px;
+    }
+    
+    .body {margin: 20px auto;}
+    
+    .title {
+        font-weight: bold;
+        font-size: 100%;
+        text-align: left;
+        margin: 10px auto;
+    }
+    
+    .experience {
+        display: inline-block;
+        width: 707px;
+        vertical-align: top;
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 90%;
+    }
+    
+    .locationNtime {
+        display: inline-block;
+        width: 267px;
+        vertical-align: top;
+        text-align: right;
+        margin-bottom: 10px;
+        font-size: 90%;
+    }
+    
+    .explain {
+    	margin-bottom: 10px;
+        text-align: left;
+        font-size: 80%;
+    }
+    .Honor{
+		padding-left: 20px;text-align: left;margin-bottom: 10px;font-size: 90%;
+    }
+    .HonorExp{
+		padding-left: 20px;text-align: left;margin-bottom: 15px; font-size: 80%;
+    }
+    ul {
+        padding-left: 20px;
+        margin: 0px;
+    }
+    ol{padding-left: 20px;
+        margin: 0px;}
+    </style>
 </head>
+
 <body>
-    <div id="info">
-        <h1>葉韋麟&nbsp;&nbsp;Yeh Wei-Lin</h1>
-        <p>Phone: +886-916-787126 </p>
-        <p>E-mail: link.ece96@g2.nctu.edu.tw</p>
-        <p>Address: 9F., No.2, Aly. 1, Ln. 710, Xingfu Rd., Xinzhuang Dist., New Taipei City 24248, Taiwan (R.O.C.)</p>
+    <div class="frame">
+        <div class="header">
+            <div class="name">
+                葉韋麟&nbsp;&nbsp;Yeh Wei-Lin
+            </div>
+            <div class="contact">
+                <span>Phone: +886-916-787126 &nbsp;&nbsp;&nbsp;</span>
+                <span>E-mail: <span style="text-decoration: underline;">link.ece96@g2.nctu.edu.tw</span></span>
+                <div>Address: 9F., No.2, Aly. 1, Ln. 710, Xingfu Rd., Xinzhuang Dist., New Taipei City 24248, Taiwan</div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="http://filedisk.talk.tw/5/Media/TalkMedia79620131006221933.JPG">
+        </div>
+        <hr>
+        <div class="body">
+            <div class="title">EDUCATION</div>
+            <ul>
+                <li>
+                    <div class="experience">
+                        National Chiao Tung University (NCTU)
+                        <br>M.S., Electrical and Computer Engineering
+                    </div>
+                    <div class="locationNtime">
+                        Hsinchu, Taiwan
+                        <br>2011. 09- 2013. 11
+                    </div>
+                    <div class="explain">Master’s thesis: Development of Brain-Computer Interface with Optimal Channel for Neuro-Rehabilitation
+                        <br>μSystem & Control Lab, Advisor: Dr. Jin-Chern Chiou
+                    </div>
+                </li>
+                <li>
+                    <div class="experience">
+                        National Chiao Tung University (NCTU)
+                        <br> B.S., Electrical Engineering
+                    </div>
+                    <div class="locationNtime">
+                        Hsinchu, Taiwan
+                        <br>2007. 09- 2011. 06
+                    </div>
+                </li>
+            </ul>
+            <div class="title">WORK AND LEADERSHIP EXPERIENCE</div>
+            <ul>
+            	<li>
+		            <div class="experience">
+		                Social Welfare Department, New Taipei City Government (Alternative Military Service)
+		                <br>Administrator
+		            </div>
+		            <div class="locationNtime">
+		                New Taipei City, Taiwan
+		                <br>2014. 04- 2015. 04
+		            </div>
+            	</li>
+            	<li>
+            		<div class="experience">
+		                College of Electrical and Computer Engineering, National Chiao Tung University
+		                <br>Teaching Assistant for the “Freshman Discovery” program
+		            </div>
+		            <div class="locationNtime">
+		                Hsinchu, Taiwan
+		                <br>2012. 09- 2013. 01
+		            </div>
+            	</li>
+            	<li>
+            		<div class="experience">
+		                NCTU EE Softball Team
+		                <br>Captain
+		            </div>
+		            <div class="locationNtime">
+		                Hsinchu, Taiwan
+		                <br> 2009. 09- 2010. 08
+		            </div>
+            	</li>
+            </ul>
+            <div class="title">AWARDS/ HONORS/ SCHOLARSHIPS</div>
+            <div class="Honor">
+            	Honorable Mention, 2012 12th Macronix Golden Silicon Awards Semiconductor Design and Application Competition: “Neuro-rehabilitation Using Wireless EEG”
+            </div>
+			<div class="HonorExp">
+				Held by Macronix International Co., Ltd in 2012, this competition attracted 224 teams around the nation to participate in two categories: Application and Chip Design. We were one of the only 9 teams to be awarded the “Honorable Mentions” in the Application Category.
+			</div>
+            <div class="title">PUBLICATIONS</div>
+			<ol>
+				<li><div class="Honor">Wei-Lin Yeh, Yu-Chieh Huang, Jian-Hau Chiou, Jeng-Ren Duann and Jin-Chern Chiou, “A Self-produced Mother Wavelet Feature Extraction Method for Motor Imagery Brain-Computer Interface,” 35th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), pp.4302-4305, Osaka, Japan, Jul. 2013</div></li>
+				<li><div class="Honor">Yu-Chieh Huang, Jin-Chern Chiou, Jian-Hau Chiou, Wei-Lin Yeh and Jeng-Ren Duann, “A Novel Spontaneous Neural Rehabilitation System and Chip Design,” 23th The VLSI Design/CAD Symposium, Kenting, Taiwan, Aug. 2012</div></li>
+			</ol>
+
+            <div class="title">SKILLS</div>
+            <ul>
+            	<li><div class="Honor">Programming: C/C++, MATLAB, JaveScript, HTML, CSS, Verilog, Assembly</div></li>
+            	<li><div class="Honor">System design using microprocessors: 8051, Texas Instruments Microcontroller</div></li>
+            	<li><div class="Honor">Circuit Design: Full-Custom IC Design, Cell-based IC Design</div></li>
+            </ul>
+            
+        </div>
     </div>
-    <!--<div id="photo">
-            <img src="images.jpg" alt="photo not found" width="100px"itemprop="image" />
-        </div>-->
-<hr>
-
-	<strong><h3>Education:</h3></strong>
-	<p>National Chiao Tung University (NCTU)</p>
-	<p><em>M.S.:Institute of Electrical and Computer Engineering</em></p>
-	<p>National Chiao Tung University (NCTU)</p>
-	<p><em>B.S.:Electrical and Computer Engineering</em></p>
-
-<hr>
-	<h3><strong>Work Experience:</strong></h3>
-	<p>Alternative Service in New Taipei City-Social Walfare Department</p>
-<hr>
-<h3><strong>Publication:</strong></h3>
-<ol>
-	<li>Wei-Lin Yeh, Yu-Chieh Huang, Jian-Hau Chiou, Jeng-Ren Duann and Jin-Chern Chiou, “A Self Produced Mother Wavelet Feature Extraction Method for Motor Imagery Brain-Computer Interface,” 35th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), pp.4302-4305, Osaka, Japan, Jul. 2013</li>
-	<li>Yu-Chieh Huang, Jin-Chern Chiou, Jian-Hau Chiou, Wei-Lin Yeh and Jeng-Ren Duann, “A Novel Spontaneous Neural Rehabilitation System and Chip Design,” 23th The VLSI Design/CAD Symposium , Kenting, Taiwan,  Aug. 2012</li>
-</ol>
-<hr>
-<h3><strong>Skill:</strong></h3>
-<ul>
-	<li>C/C++</li>
-	<li>MATLAB</li>
-	<li>Verilog</li>
-</ul>
 </body>
+
 </html>
