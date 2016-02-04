@@ -1,22 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Link's home</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/inspiration.png">
+    <title>Link's home</title>
+    <script type="text/javascript">
+    var IntervalID;
+	var oBrowser = new detectBrowser();
+    function $(id){
+    	return document.getElementById(id);
+    }
+window.onload=function(){
+	var tag1,tag2,tag3,tag4,cv,headtitle;
+	var destination,updownflag; // 存滑動目的與預計滑動方式(上滑或下滑)
+	
+	tag1=$("tag1");
+	tag2=$("tag2");
+	tag3=$("tag3");
+	tag4=$("tag4");
+	cv=$("cv");
+	headtitle=$("headtitle");
+	tag1.addEventListener("mouseover",tagon);
+	tag1.addEventListener("mouseout",tagoff);
+	tag2.addEventListener("mouseover",tagon);
+	tag2.addEventListener("mouseout",tagoff);
+	tag3.addEventListener("mouseover",tagon);
+	tag3.addEventListener("mouseout",tagoff);
+	tag4.addEventListener("mouseover",tagon);
+	tag4.addEventListener("mouseout",tagoff);
+	cv.addEventListener("mouseover",cvoff);
+	cv.addEventListener("mouseout",cvon);
+	tag1.addEventListener("click",go);
+	tag4.addEventListener("click",go);
+	headtitle.addEventListener("click",go);
+};
+function go(){
+	//alert(document.documentElement.scrollHeight+','+document.body.scrollHeight);
+	window.clearInterval(IntervalID);
+	if(this==headtitle){
+		destination=0;
+	}
+	else if(this==tag1){
+		destination=$("aboutme").offsetTop;
+	}else{
+		if((document.documentElement.scrollHeight-$("contact").offsetTop)>window.innerHeight)
+			destination=$("contact").offsetTop;
+		else
+			destination=document.documentElement.scrollHeight-window.innerHeight-10;
+	}
+	if (oBrowser.isIE||oBrowser.isFF) { // firefox、IE scrollTop做在<html>level
+		if(destination>document.documentElement.scrollTop){updownflag=1;}
+		else{updownflag=0;}
+	}
+	else if (oBrowser.isSa||oBrowser.isCh||oBrowser.isOp) { // Chrome、Safari、Opera scrollTop做在body level
+		if(destination>document.body.scrollTop){updownflag=1;}
+		else{updownflag=0;}
+	}
+	IntervalID=window.setInterval(scroll,10);
+}
+function scroll(){
+	if (oBrowser.isIE||oBrowser.isFF) {  // firefox、IE scrollTop做在<html>level
+		if(updownflag==1){
+			document.documentElement.scrollTop+=20;
+			if(document.documentElement.scrollTop>=destination)
+				window.clearInterval(IntervalID);
+		}
+		else{
+			document.documentElement.scrollTop-=20;
+			if(document.documentElement.scrollTop<=destination)
+				window.clearInterval(IntervalID);
+		}	
+	} 
+	else if (oBrowser.isSa||oBrowser.isCh||oBrowser.isOp) { // Chrome、Safari、Opera scrollTop做在body level
+		if(updownflag==1){
+			document.body.scrollTop+=20;
+			if(document.body.scrollTop>=destination)
+				window.clearInterval(IntervalID);
+		}
+		else{
+			document.body.scrollTop-=20;
+			if(document.body.scrollTop<=destination)
+				window.clearInterval(IntervalID);
+		}
+	} 
+}
+function tagon(){
+	this.className="headtagon";
+}
+function tagoff(){
+	this.className="headtagoff";
+}
+function cvon(){
+	this.className="cvon";
+}
+function cvoff(){
+	this.className="cvoff";
+}
+function detectBrowser(){
+	var sAgent = navigator.userAgent.toLowerCase();
+	this.isIE = (sAgent.indexOf("msie")!=-1); //IE6.0-7
+	this.isFF = (sAgent.indexOf("firefox")!=-1);//firefox
+	this.isSa = (sAgent.indexOf("safari")!=-1);//safari
+	this.isOp = (sAgent.indexOf("opera")!=-1);//opera
+	this.isNN = (sAgent.indexOf("netscape")!=-1);//netscape
+	this.isCh = (sAgent.indexOf("chrome")!=-1);//chrome
+	this.isMa = this.isIE;//marthon
+	this.isOther = (!this.isIE && !this.isFF && !this.isSa && !this.isOp && !this.isNN && !this.isSa);//unknown Browser
+}
+    </script>
+    <style type="text/css">
+
+    </style>
+<link rel="stylesheet" type="text/css" href="index.css">
 </head>
+
 <body>
-	<h1>
-	<font size="20">Link's Home</font>
-	</h1>
-    <hr>
-    <p>
-        <a href="pages/cv.html">Link's CV</a>&nbsp;
-        <a href="pages/table.html">class 3 exercise</a>&nbsp;
-        <a href="pages/pikachu_begin/position for students.html">作業二</a>&nbsp;
-        <a href="pages/CSS Float exercise/listand3columns_s.html">作業三(1)</a>&nbsp;
-        <a href="pages/rwd for students/rwd嚗瞞or_student.html">作業三(2)</a>&nbsp;
-        <a href="pages/ex4/heroic2.html">作業四</a>&nbsp;
-        <a href="pages/抽獎_begin/index.html">作業五</a>
-    </p>
+<div class="head">
+	<div class="container">
+		<img class="headicon" src="images/marketing8.png">
+		<div class="headtitle" id="headtitle">LINK YEH</div>
+		<div class="headtagoff" id="tag1">ABOUT ME</div>
+		<div class="headtagoff" id="tag2">PORTFOLIO</div>
+		<div class="headtagoff" id="tag3">ALBUM</div>
+		<div class="headtagoff" id="tag4">CONTACT</div>
+	</div>
+</div>
+<div class="welcome">
+	<!-- 在JS用window.screen.width抓到螢幕高度 -->
+	<div class="container">
+		<div>
+			<img class="welphoto" src="images/welcomphoto2.jpg">
+		</div>
+		<div class="welslogan">Welcome to Link's World!</div>
+		<div class="welword">Hi! I'm Link, an Electrical and Computer Engineer.</div>
+		<div class="welword">Engineeging &middot; Signal Processing &middot; Web Development &middot; Triathlon</div>
+	</div>
+</div>
+<div class="aboutme" id="aboutme">
+	<div class="container">
+		<div class="abparagraph">
+			<div class="abheader"><img class="abheadericon" src="images/inspiration2.png">About Me</div>
+			<div>
+			Hi! My name is <b>Link Yeh</b>, an Electrical and Computer Engineer. I was majored in <b>EE</b> and learned about the electrical circuit and low-level implementation in my undergraduate study. During the graduate study, I did research about <b>Brain Computer Interface</b> and <b>EEG signal processing</b>, and focus more on the <b>algorithm</b> and <b>software</b> developement. Recently, I am interested in the <b>Web Development</b>.<br><br>
+			I'm obsessed with <b>physical activity</b> such as working out, cycling, running and swimming. I've finished a few triathon races and cycling activities last year. I also play softball and do some <b>photography</b> in my free time.</div><br>
+			<a href="pages/CV.html"><div class="cvon" id="cv">Curriculum Vitae</div></a>
+		</div>
+
+		<img class="abphoto" src="images/aboutme.jpg">
+			
+	</div>
+	
+</div>
+<div class="contact" id="contact">
+		<img class="contimg" src="images/mail3.png">
+		<div>台灣 新北市新莊區 24248</div>
+		<div>Xinzhuang Dist., New Taipei City 24248, Taiwan</div>
+		<div><img class="socimg" src="images/telephone5.png"><span>(+86)916-XXX-XXX</span></div>
+		<br>
+		<div>Link Yeh</div>
+		<div style="text-decoration: underline;">ohayolink@gmail.com</div>
+		<br>
+		<div>Social networks</div>
+		<div><a href="http://ohayolink.github.io/"><img class="socimg" src="images/home168.png"></a>
+			<a href="https://www.facebook.com/link.yeh.5"><img class="socimg" src="images/facebook29.png"></a>
+			<img class="socimg" src="images/linkedin12.png">
+		</div>
+		<br>
+		<div>COPYRIGHT&reg; 2016 - LINK YEH</div>
+		<br>
+		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+		<div>Icons made by <a href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+
+</div>
+
+
 </body>
+
 </html>
