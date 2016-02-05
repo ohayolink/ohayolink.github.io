@@ -30,8 +30,8 @@ window.onload=function(){
 	tag3.addEventListener("mouseout",tagoff);
 	tag4.addEventListener("mouseover",tagon);
 	tag4.addEventListener("mouseout",tagoff);
-	cv.addEventListener("mouseover",cvoff);
-	cv.addEventListener("mouseout",cvon);
+	cv.addEventListener("mouseover",btoff);
+	cv.addEventListener("mouseout",bton);
 	tag1.addEventListener("click",go);
 	tag4.addEventListener("click",go);
 	headtitle.addEventListener("click",go);
@@ -92,11 +92,11 @@ function tagon(){
 function tagoff(){
 	this.className="headtagoff";
 }
-function cvon(){
-	this.className="cvon";
+function bton(){
+	this.className="bton";
 }
-function cvoff(){
-	this.className="cvoff";
+function btoff(){
+	this.className="btoff";
 }
 function detectBrowser(){
 	var sAgent = navigator.userAgent.toLowerCase();
@@ -121,10 +121,10 @@ function detectBrowser(){
 	<div class="container">
 		<img class="headicon" src="images/marketing8.png">
 		<div class="headtitle" id="headtitle">LINK YEH</div>
-		<div class="headtagoff" id="tag1">ABOUT ME</div>
-		<div class="headtagoff" id="tag2">PORTFOLIO</div>
-		<div class="headtagoff" id="tag3">ALBUM</div>
 		<div class="headtagoff" id="tag4">CONTACT</div>
+		<div class="headtagoff" id="tag3">ALBUM</div>
+		<div class="headtagoff" id="tag2">PORTFOLIO</div>
+		<div class="headtagoff" id="tag1">ABOUT ME</div>
 	</div>
 </div>
 <div class="welcome">
@@ -144,14 +144,23 @@ function detectBrowser(){
 			<div class="abheader"><img class="abheadericon" src="images/inspiration2.png">About Me</div>
 			<div>
 			Hi! My name is <b>Link Yeh</b>, an Electrical and Computer Engineer. I was majored in <b>EE</b> and learned about the electrical circuit and low-level implementation in my undergraduate study. During the graduate study, I did research about <b>Brain Computer Interface</b> and <b>EEG signal processing</b>, and focus more on the <b>algorithm</b> and <b>software</b> developement. Recently, I am interested in the <b>Web Development</b>.<br><br>
-			I'm obsessed with <b>physical activity</b> such as working out, cycling, running and swimming. I've finished a few triathon races and cycling activities last year. I also play softball and do some <b>photography</b> in my free time.</div><br>
-			<a href="pages/cv.html"><div class="cvon" id="cv">Curriculum Vitae</div></a>
+			I'm obsessed with <b>physical activity</b> such as working out, cycling, running and swimming. I've finished a few triathon races and cycling activities last year. I also play softball and do some <b>photography</b> in my free time.</div>
+			<a class="bton" id="cv" href="pages/cv.html">Curriculum Vitae</a>
 		</div>
 
 		<img class="abphoto" src="images/aboutme.jpg">
 			
 	</div>
-	
+</div>
+<div class="portfolio" id="portfolio">
+	<div class="container">
+		<div class="abheader"><img class="abheadericon" src="images/inspiration3.png">Portfolio</div>
+		<div class="portbox">
+			<img class="portpicture" src="images/billboard.png">
+			<div>BillBoard</div>
+			<a class="bton" id="" href="pages/cv.html">Visit Site</a>
+		</div>
+	</div>	
 </div>
 <div class="contact" id="contact">
 		<img class="contimg" src="images/mail3.png">
