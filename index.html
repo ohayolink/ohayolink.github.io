@@ -13,28 +13,32 @@
     	return document.getElementById(id);
     }
 window.onload=function(){
-	var tag1,tag2,tag3,tag4,cv,headtitle;
+	var tag1,tag2,tag3,cv,headtitle,portbox1,pb1;
 	var destination,updownflag; // 存滑動目的與預計滑動方式(上滑或下滑)
 	
 	tag1=$("tag1");
 	tag2=$("tag2");
 	tag3=$("tag3");
-	tag4=$("tag4");
 	cv=$("cv");
 	headtitle=$("headtitle");
+	portbox1=$("portbox1");
+	pb1=$("pb1");
 	tag1.addEventListener("mouseover",tagon);
 	tag1.addEventListener("mouseout",tagoff);
 	tag2.addEventListener("mouseover",tagon);
 	tag2.addEventListener("mouseout",tagoff);
 	tag3.addEventListener("mouseover",tagon);
 	tag3.addEventListener("mouseout",tagoff);
-	tag4.addEventListener("mouseover",tagon);
-	tag4.addEventListener("mouseout",tagoff);
 	cv.addEventListener("mouseover",btoff);
 	cv.addEventListener("mouseout",bton);
+	pb1.addEventListener("mouseover",btoff);
+	pb1.addEventListener("mouseout",bton);
 	tag1.addEventListener("click",go);
-	tag4.addEventListener("click",go);
+	tag2.addEventListener("click",go);
+	tag3.addEventListener("click",go);
 	headtitle.addEventListener("click",go);
+	portpic1.style.opacity=1;
+	addfade(portpic1);
 };
 function go(){
 	//alert(document.documentElement.scrollHeight+','+document.body.scrollHeight);
@@ -44,6 +48,8 @@ function go(){
 	}
 	else if(this==tag1){
 		destination=$("aboutme").offsetTop;
+	}else if(this==tag2){
+		destination=$("portfolio").offsetTop;
 	}else{
 		if((document.documentElement.scrollHeight-$("contact").offsetTop)>window.innerHeight)
 			destination=$("contact").offsetTop;
@@ -58,17 +64,17 @@ function go(){
 		if(destination>document.body.scrollTop){updownflag=1;}
 		else{updownflag=0;}
 	}
-	IntervalID=window.setInterval(scroll,10);
+	IntervalID=window.setInterval(scroll,5);
 }
 function scroll(){
 	if (oBrowser.isIE||oBrowser.isFF) {  // firefox、IE scrollTop做在<html>level
 		if(updownflag==1){
-			document.documentElement.scrollTop+=20;
+			document.documentElement.scrollTop+=10;
 			if(document.documentElement.scrollTop>=destination)
 				window.clearInterval(IntervalID);
 		}
 		else{
-			document.documentElement.scrollTop-=20;
+			document.documentElement.scrollTop-=10;
 			if(document.documentElement.scrollTop<=destination)
 				window.clearInterval(IntervalID);
 		}	
@@ -96,7 +102,9 @@ function bton(){
 	this.className="bton";
 }
 function btoff(){
-	this.className="btoff";
+	if(this==cv){this.className="btoff";}
+	else if(this==pb1){this.className="btoff";}
+	
 }
 function detectBrowser(){
 	var sAgent = navigator.userAgent.toLowerCase();
@@ -109,6 +117,35 @@ function detectBrowser(){
 	this.isMa = this.isIE;//marthon
 	this.isOther = (!this.isIE && !this.isFF && !this.isSa && !this.isOp && !this.isNN && !this.isSa);//unknown Browser
 }
+function addfade(elem){
+        elem.addEventListener("mouseover",In);
+        elem.addEventListener("mouseout",out);
+}
+function In(){
+        var obj=this;
+    	window.clearInterval(this.IntervalId);        
+    	this.IntervalId=window.setInterval(function(){
+            if(Number(obj.style.opacity)>0.7){
+                obj.style.opacity=Number(obj.style.opacity)-0.05;
+            }
+            else{
+                window.clearInterval(obj.IntervalId);
+            }
+        },20);
+}
+function out(){
+        var obj=this;
+        window.clearInterval(this.IntervalId);        
+        this.IntervalId=window.setInterval(function(){
+            if(Number(obj.style.opacity)<1){
+            	obj.style.opacity=Number(obj.style.opacity)+0.05;
+            }
+            else{
+                window.clearInterval(obj.IntervalId);
+            }
+        },20);
+}
+
     </script>
     <style type="text/css">
 
@@ -121,8 +158,8 @@ function detectBrowser(){
 	<div class="container">
 		<img class="headicon" src="images/marketing8.png">
 		<div class="headtitle" id="headtitle">LINK YEH</div>
-		<div class="headtagoff" id="tag4">CONTACT</div>
-		<div class="headtagoff" id="tag3">ALBUM</div>
+		<div class="headtagoff" id="tag3">CONTACT</div>
+		<!-- <div class="headtagoff" id="tag3">ALBUM</div> -->
 		<div class="headtagoff" id="tag2">PORTFOLIO</div>
 		<div class="headtagoff" id="tag1">ABOUT ME</div>
 	</div>
@@ -156,9 +193,9 @@ function detectBrowser(){
 	<div class="container">
 		<div class="abheader"><img class="abheadericon" src="images/inspiration3.png">Portfolio</div>
 		<div class="portbox">
-			<img class="portpicture" src="images/billboard.png">
-			<div>BillBoard</div>
-			<a class="bton" id="" href="pages/cv.html">Visit Site</a>
+			<img class="portpicture" id="portpic1" src="images/billboard.png">
+			<div class="porttitle">Micro Blog</div>
+			<a class="bton" id="pb1" href="pages/microblog.html">Visit Site</a>
 		</div>
 	</div>	
 </div>

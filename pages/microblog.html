@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Billboard</title>
+	<style type="text/css">
+.top{text-align: center;}
+.topheader{font-size: 20px;font-weight: bold;}
+.main{text-align: center;width: 1000px;margin: 0 auto;}
+.posttext{display: inline-block;width: 500px;text-align: left;padding: 30px;}
+.postpic{display:inline-block;vertical-align: middle;width: 100px;text-align: right;padding: 30px}
+
+	</style>
+
+<script type="text/javascript">
+
+function addPost(){
+	var postBox=document.getElementById("postBox");
+	var radio=document.getElementsByName("moodRadio");
+	var postcontainer=document.createElement("div");
+	var img=document.createElement("img");
+	var postpic=document.createElement("div");
+	var posttext=document.createElement("div");
+	var button=document.createElement("button");
+	var main=document.getElementById("main");
+	postpic.className="postpic";
+	posttext.className="posttext";
+	posttext.innerHTML=postBox.value;
+	button.innerHTML="Delete";
+	button.addEventListener("click",deletepost);
+	if(radio[0].checked) img.src="../images/delighted.png";
+	else if(radio[1].checked) img.src="../images/happy.png";
+	else img.src="../images/sad.png";
+	
+	postpic.appendChild(img);
+	postcontainer.appendChild(postpic);
+	postcontainer.appendChild(posttext);
+	postcontainer.appendChild(button);
+	main.appendChild(postcontainer);
+}
+function deletepost(){
+	var main=document.getElementById("main");
+	main.removeChild(this.parentNode);
+}
+</script>
+
+</head>
+<body>
+<div class="top">
+	<div class="topheader">
+		My Micro Blog
+	</div>
+	<form name="postForm" onsubmit="addPost();return false;">
+		What's in my mind:
+		<input type="text" id="postBox" size="80" maxlength="140" /><br><br>
+		Today's mood:
+		<input type="radio" name="moodRadio" value="delighted"> Over the moon
+		<input type="radio" name="moodRadio" value="happy" checked="checked"> Happy
+		<input type="radio" name="moodRadio" value="sad"> Sad &nbsp;&nbsp;&nbsp;
+		<input type="submit" value="Post" />
+	</form>
+
+
+</form>
+	
+</div>
+<div class="main" id="main">
+	
+</div>
+</body>
+</html>

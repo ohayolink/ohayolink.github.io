@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+/*b,*/ u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -51,7 +51,7 @@ table {
 body{margin: 0px;font-family: Arial,"微軟正黑體";}
     div{padding: 5px;}
     a{color: #111111;text-decoration: none;}
-.head{background-color:#181818;font-size:20px;font-family: Arial Black;width:100%;position: fixed;}
+.head{background-color:#181818;font-size:20px;font-family: Arial Black;width:100%;position: fixed;z-index: 1;}
 .container{width: 1000px;margin:0px auto;}
 .headicon{height: 35px;}
 .headtitle{display: inline-block;vertical-align: 25%;color:#FCFCFC;}
@@ -66,13 +66,40 @@ body{margin: 0px;font-family: Arial,"微軟正黑體";}
 .abheader{font-size: 25px;font-weight: bold;text-align: left;}
 .abheadericon{height: 35px;}
 .bton{background-color: #0A365C;width: 140px;border:1px solid #181818;border-radius: 5%;text-decoration: none;color: #FCFCFC;font-weight: bold;
-	display: inline-block;margin: 20px auto;text-align: center;padding: 10px;line-height:normal;}
+	display: inline-block;margin: 20px auto;text-align: center;padding: 10px;line-height:normal;opacity: 1;}
 .btoff{background-color: #444444;width: 140px;border:1px solid #181818;border-radius: 5%;text-decoration: none;color: #FCFCFC;font-weight: bold;
-	display: inline-block;margin: 20px auto;text-align: center;padding: 10px;line-height:normal;}
+	display: inline-block;margin: 20px auto;text-align: center;padding: 10px;line-height:normal;opacity: 1;}
+.btoff2{background-color: #07233C;width: 140px;border:1px solid #181818;border-radius: 5%;text-decoration: none;color: #FCFCFC;font-weight: bold;
+display: inline-block;margin: 20px auto;text-align: center;padding: 10px;line-height:normal;opacity: 1;}
 .abphoto{height: 500px;margin-left: 90px;}
-.portfolio{background-color: #0A365C;color:#FCFCFC;padding: 70px;text-align: center;}
-.portbox{background-color: #FCFCFC;color: #000000;width: 300px;height: 300px;display: inline-block;padding:10px 5px;}
-.portpicture{width: 250px;}
+.portfolio{background-color: #0A365C;color:#FCFCFC;padding: 70px;text-align: center;font-size: 25px;}
+.portbox{background-color: #f0f0f0;color: #000000;width: 250px;height: 250px;display: inline-block;padding:20px 5px;font-size: 20px;margin:10px;border-radius: 5%;box-shadow: 0px 0px 15px #000000;opacity:1;}
+.portpicture{width: 200px;}
+.porttitle{font-weight: bold;margin-top: 20px;}
 .contact{background-color: #444444;color: #FCFCFC;font-size: 15px;text-align: center;padding: 50px;}
 .contimg{width: 60px;}
 .socimg{width: 25px;margin: 5px;vertical-align:-60%;}
+
+@media screen and (max-width:480px){
+div{padding: 0px;}
+body{font-size: 20px;}
+.container{width: 90%;margin:0px auto;padding: 5%;}
+.head{width: 100%;}
+.headtagoff{display: none;}
+.headtagon{display: none;}
+.headicon{vertical-align: bottom;}
+.welcome{width: 100%;margin:0px auto;height: initial;}
+.welphoto{height: 120px;margin-top: 30%;}
+.welslogan{font-size: 150%;}
+.welword{font-size: 70%;}
+.aboutme{width: 100%;margin:0px auto;padding: 0px;}
+.abphoto{display: none;}
+.abparagraph{width: 90%;margin: 0px;text-align:justify;padding:5% 5%;font-size: 70%}
+.abheader{font-size: 20px;text-align: left;margin-bottom: 10px;}
+.abheadericon{vertical-align: bottom;}
+.portfolio{width: 100%;margin:0px auto;padding: 0px;}
+.portbox{margin: 20px 0px;font-size: 15px;}
+.contact{width: 90%;margin:0px auto;padding:50px 5%;font-size: 12px;}
+.contimg{width: 20%;}
+.socimg{width: 8%;margin: 5px;vertical-align:middle;}
+}
